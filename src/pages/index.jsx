@@ -1,24 +1,13 @@
 import * as React from "react"
 
-import { Router, Route, Switch, Redirect } from "@reach/router"
-
-import Layout from "../components/layout"
+import { Router } from "@reach/router"
 import Home from "./home"
 const IndexPage = () => (
-  <Layout>
-    <Router>
-      <Switch>
-        <Route
-          exact
-          path="/"
-          render={() => {
-            return <Redirect to="/home" />
-          }}
-        />
-        <Route exact path="/home" component={Home} />
-      </Switch>
-    </Router>
-  </Layout>
+  <Router>
+    <Home path="/" />
+
+    <notFoundPage default />
+  </Router>
 )
 
 export default IndexPage
