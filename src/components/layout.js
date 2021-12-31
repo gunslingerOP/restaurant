@@ -8,6 +8,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import ScrollAnimation from "react-animate-on-scroll"
 
 import Header from "./header/header.js"
 import "./layout.scss"

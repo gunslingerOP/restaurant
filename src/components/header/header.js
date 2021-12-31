@@ -60,7 +60,6 @@ const Header = ({ siteTitle }) => {
           <span>English</span>/<span>عربي</span>
         </div>
       </div>
-
       <header className={`${isScrolled ? "header-scrolled" : ""}`}>
         <article className="wrapper">
           <div className="logo">
