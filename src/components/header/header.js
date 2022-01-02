@@ -16,7 +16,6 @@ const Header = ({ siteTitle }) => {
       if (yOffset > 80) {
         setScrolled(true)
       } else if (yOffset < 80) {
-        console.log("EXEC", yOffset)
         setScrolled(false)
       }
     })

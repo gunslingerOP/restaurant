@@ -8,8 +8,8 @@ import about from "../images/about.jpg"
 import IcomoonReact from "icomoon-react"
 import iconSet from "../selection.json"
 import Menu from "../components/menu/menu"
-import { StaticImage } from "gatsby-plugin-image"
-
+import { Trans, useTranslation } from "gatsby-plugin-react-i18next"
+import { graphql } from "gatsby"
 const Home = () => (
   <>
     <Layout>
@@ -20,7 +20,9 @@ const Home = () => (
             <Zoom>
               <div className="col-lg-8">
                 <h1>
-                  Welcome to <span>Restaurantly</span>
+                  <Trans>Welcome to</Trans>
+
+                  <span>Restaurantly</span>
                 </h1>
                 <h2>Delivering great food for more than 18 years!</h2>
 
@@ -258,3 +260,16 @@ const Home = () => (
 )
 
 export default Home
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

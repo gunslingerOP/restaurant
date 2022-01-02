@@ -28,6 +28,8 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    "react-i18next",
+    "i18next",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -58,12 +60,18 @@ module.exports = {
         },
         pages: [
           {
-            matchPath: "/",
+            matchPath: "/:lang?/blog/:uid",
+            getLanguageFromPath: true,
+            excludeLanguages: ["es"],
+          },
+          {
+            matchPath: "/preview",
             languages: ["en", "ar"],
           },
         ],
       },
-    }`gatsby-plugin-sass`,
+    },
+    `gatsby-plugin-sass`,
     "eslint-plugin-react-hooks",
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
