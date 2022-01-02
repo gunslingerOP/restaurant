@@ -22,10 +22,6 @@ const Header = ({ siteTitle }) => {
     })
   })
 
-  function handleNav(el) {
-    console.log("EL", el)
-  }
-
   return (
     <>
       <div className={`pre-header ${isScrolled ? "scrolled" : ""}`}>
@@ -78,33 +74,20 @@ const Header = ({ siteTitle }) => {
           <MobileHeader />
           <nav className="desktop-header-nav">
             <ul className="nav-items">
-              <Link
-                className="nav-link"
-                to="/"
-                activeClassName="active"
-                onClick={el => handleNav(el.target)}
-              >
+              <Link className="nav-link" to="/">
                 Home
               </Link>
-              <Link
-                className="nav-link"
-                to="/menu"
-                activeClassName="active"
-                onClick={el => handleNav(el.target)}
-              >
+              <Link className="nav-link" to="#specials">
                 Menu
               </Link>
-              <Link
-                className="nav-link"
-                to="/contact"
-                activeClassName="active"
-                onClick={el => handleNav(el.target)}
-              >
+              <Link className="nav-link" to="#contact">
                 Contact
               </Link>
             </ul>
           </nav>
-          <button className="reserve">BOOK A TABLE</button>
+          <Link className="nav-link" to="#reserve">
+            <button className="reserve">BOOK A TABLE</button>
+          </Link>
         </article>
       </header>
     </>

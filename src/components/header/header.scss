@@ -32,9 +32,19 @@ $theme-color: #cda35e;
       margin-left: 10px;
       align-items: center;
     }
+
+    @media (max-width: 600px) {
+      .time,
+      .phone {
+        font-size: 15px;
+      }
+    }
   }
 
   .language {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
     @media (max-width: 600px) {
       display: none;
     }
@@ -168,7 +178,12 @@ header {
     text-decoration: none;
     cursor: pointer;
     &:hover {
-      color: $theme-color;
+      color: $theme-color !important;
+      border-bottom: solid 2px yellow !important;
+    }
+
+    @media (max-width: 600px) {
+      display: none;
     }
   }
 }
