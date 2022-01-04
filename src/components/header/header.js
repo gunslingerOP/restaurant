@@ -6,6 +6,7 @@ import iconSet from "../../selection.json"
 import IcomoonReact from "icomoon-react"
 import { useState, useEffect } from "react"
 import MobileHeader from "./mobile-header"
+import { Trans } from "gatsby-plugin-react-i18next"
 
 const Header = ({ siteTitle }) => {
   const [isScrolled, setScrolled] = useState(false)
@@ -41,7 +42,7 @@ const Header = ({ siteTitle }) => {
               size={20}
               color="#cda35e"
             />
-            Sun-Sat: 8AM-11PM
+            <Trans>All week: 9:00 AM - 11 PM</Trans>
           </span>
         </div>
 
@@ -52,7 +53,7 @@ const Header = ({ siteTitle }) => {
             size={20}
             color="#cda35e"
           />
-          <span>English</span>/<span>عربي</span>
+          <Link to="/">English</Link>/<Link to="/ar">عربي</Link>
         </div>
       </div>
       <header className={`${isScrolled ? "header-scrolled" : ""}`}>
@@ -60,7 +61,7 @@ const Header = ({ siteTitle }) => {
           <div className="logo">
             <h1 style={{ margin: 0 }}>
               <Link
-                to="/"
+                to="#hero"
                 style={{
                   color: `white`,
                   textDecoration: `none`,
@@ -73,19 +74,21 @@ const Header = ({ siteTitle }) => {
           <MobileHeader />
           <nav className="desktop-header-nav">
             <ul className="nav-items">
-              <Link className="nav-link" to="/">
-                Home
+              <Link className="nav-link" to="#hero">
+                <Trans>Home</Trans>
               </Link>
               <Link className="nav-link" to="#specials">
-                Menu
+                <Trans>Menu</Trans>
               </Link>
               <Link className="nav-link" to="#contact">
-                Contact
+                <Trans>Contact</Trans>
               </Link>
             </ul>
           </nav>
           <Link className="nav-link" to="#reserve">
-            <button className="reserve">BOOK A TABLE</button>
+            <button className="reserve">
+              <Trans>Book a Table</Trans>
+            </button>
           </Link>
         </article>
       </header>

@@ -8,7 +8,7 @@ import about from "../images/about.jpg"
 import IcomoonReact from "icomoon-react"
 import iconSet from "../selection.json"
 import Menu from "../components/menu/menu"
-import { Trans, useTranslation } from "gatsby-plugin-react-i18next"
+import { Trans } from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
 const Home = () => (
   <>
@@ -22,22 +22,26 @@ const Home = () => (
                 <h1>
                   <Trans>Welcome to</Trans>
 
-                  <span>Restaurantly</span>
+                  <span>
+                    <Trans>Restaurantly</Trans>
+                  </span>
                 </h1>
-                <h2>Delivering great food for more than 18 years!</h2>
+                <h2>
+                  <Trans>Delivering great food for more than 18 years!</Trans>
+                </h2>
 
                 <div className="btns">
                   <a
                     href="#specials"
                     className="btn-menu animated fadeInUp scrollto"
                   >
-                    Our Menu
+                    <Trans>Our Menu</Trans>
                   </a>
                   <a
                     href="#reserve"
                     className="btn-book animated fadeInUp scrollto"
                   >
-                    Book a Table
+                    <Trans>Book a Table</Trans>
                   </a>
                 </div>
               </div>
@@ -67,20 +71,14 @@ const Home = () => (
             </Zoom>
             <div className=" content">
               <h3>
-                Voluptatem dignissimos provident quasi corporis voluptates sit
-                assumenda.
+                <Trans>Title of image section</Trans>
               </h3>
               <p className="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <Trans>Subtitle of image section</Trans>
               </p>
 
               <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                aute irure dolor in reprehenderit in voluptate velit esse cillum
-                dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum
+                <Trans>Description of image section</Trans>
               </p>
             </div>
           </div>
@@ -91,8 +89,12 @@ const Home = () => (
         <Fade right>
           <div className="container limit-width" data-aos="fade-up">
             <div className="section-title">
-              <h2>Why Us</h2>
-              <p>Why Choose Our Restaurant</p>
+              <h2>
+                <Trans>Why Us</Trans>
+              </h2>
+              <p>
+                <Trans>Why Choose Our Restaurant</Trans>
+              </p>
             </div>
 
             <div className="row">
@@ -102,11 +104,12 @@ const Home = () => (
                   data-aos="zoom-in"
                   data-aos-delay="100"
                 >
-                  <span>01</span>
-                  <h4>Lorem Ipsum</h4>
+                  <span>1</span>
+                  <h4>
+                    <Trans>First reason</Trans>
+                  </h4>
                   <p>
-                    Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et
-                    consectetur ducimus vero placeat
+                    <Trans>First reason description</Trans>
                   </p>
                 </div>
               </div>
@@ -117,11 +120,12 @@ const Home = () => (
                   data-aos="zoom-in"
                   data-aos-delay="200"
                 >
-                  <span>02</span>
-                  <h4>Repellat Nihil</h4>
+                  <span>2</span>
+                  <h4>
+                    <Trans>Second reason</Trans>
+                  </h4>
                   <p>
-                    Dolorem est fugiat occaecati voluptate velit esse. Dicta
-                    veritatis dolor quod et vel dire leno para dest
+                    <Trans>Second reason description</Trans>
                   </p>
                 </div>
               </div>
@@ -132,11 +136,13 @@ const Home = () => (
                   data-aos="zoom-in"
                   data-aos-delay="300"
                 >
-                  <span>03</span>
-                  <h4> Ad ad velit qui</h4>
+                  <span>3</span>
+                  <h4>
+                    {" "}
+                    <Trans>Third reason</Trans>
+                  </h4>
                   <p>
-                    Molestiae officiis omnis illo asperiores. Aut doloribus
-                    vitae sunt debitis quo vel nam quis
+                    <Trans>Third reason description</Trans>
                   </p>
                 </div>
               </div>
@@ -149,8 +155,12 @@ const Home = () => (
         <Fade left>
           <div className="limit-width">
             <div className="section-title">
-              <h2>Reservation</h2>
-              <p>Book a Table</p>
+              <h2>
+                <Trans>Reservation</Trans>
+              </h2>
+              <p>
+                <Trans>Book a Table</Trans>
+              </p>
             </div>
 
             <div className="call-us">
@@ -165,7 +175,7 @@ const Home = () => (
               </div>
 
               <a href="tel:07705344322" className="btn-reserve">
-                CALL US
+                <Trans>CALL US</Trans>
               </a>
             </div>
           </div>
@@ -175,8 +185,12 @@ const Home = () => (
       <section id="specials">
         <div className="container limit-width">
           <div className="section-title">
-            <h2>Specials</h2>
-            <p>Check Our Specials</p>
+            <h2>
+              <Trans>Specials</Trans>
+            </h2>
+            <p>
+              <Trans>Check Our Specials</Trans>
+            </p>
           </div>
 
           <div className="container">
@@ -188,8 +202,12 @@ const Home = () => (
       <section id="contact" className="contact">
         <div className="container limit-width" data-aos="fade-up">
           <div className="section-title">
-            <h2>Contact</h2>
-            <p>Contact Us</p>
+            <h2>
+              <Trans>Contact</Trans>
+            </h2>
+            <p>
+              <Trans>Contact Us</Trans>
+            </p>
           </div>
         </div>
 
@@ -206,8 +224,12 @@ const Home = () => (
                       color="#cda35e"
                     />
                     <div className="contact-item">
-                      <h4>Location:</h4>
-                      <p>A108 Adam Street, New York, NY 535022</p>
+                      <h4>
+                        <Trans>Location</Trans>:
+                      </h4>
+                      <p>
+                        <Trans>Baghdad,Al-mansour, 14 Ramadan street</Trans>
+                      </p>
                     </div>
                   </div>
 
@@ -219,8 +241,12 @@ const Home = () => (
                       color="#cda35e"
                     />
                     <div className="contact-item">
-                      <h4>Open Hours:</h4>
-                      <p>Monday-Saturday: 11:00 AM - 2300 PM</p>
+                      <h4>
+                        <Trans>Open Hours</Trans>:
+                      </h4>
+                      <p>
+                        <Trans>All week: 9:00 AM - 12 PM</Trans>
+                      </p>
                     </div>
                   </div>
 
@@ -232,8 +258,10 @@ const Home = () => (
                       color="#cda35e"
                     />{" "}
                     <div className="contact-item">
-                      <h4>Email:</h4>
-                      <p>info@example.com</p>
+                      <h4>
+                        <Trans>Email</Trans>:
+                      </h4>
+                      <p>hasanaqeel38@gmail.com</p>
                     </div>
                   </div>
 
@@ -245,8 +273,10 @@ const Home = () => (
                       color="#cda35e"
                     />{" "}
                     <div className="contact-item">
-                      <h4>Call:</h4>
-                      <p>+1 5589 55488 55s</p>
+                      <h4>
+                        <Trans>Call</Trans>:
+                      </h4>
+                      <p>+9647705344322</p>
                     </div>
                   </div>
                 </div>

@@ -1,63 +1,64 @@
 import { Spin as Hamburger } from "hamburger-react"
 
 import * as React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import "./header.scss"
-import iconSet from "../../selection.json"
-import IcomoonReact from "icomoon-react"
-import { useState, useEffect } from "react"
 
-const MobileHeader = ({ siteTitle }) => {
+import { useState } from "react"
+import { Trans } from "gatsby-plugin-react-i18next"
+import { I18nextContext } from "gatsby-plugin-react-i18next"
+const MobileHeader = () => {
+  const context = React.useContext(I18nextContext)
+  const language = context.language
   const [isOpen, setOpen] = useState(false)
-  function handleNav(el) {
-    console.log("EL", el)
-  }
-
-  function burgerToggle(toggled) {
-    if (toggled) {
-    } else {
-    }
-  }
 
   return (
     <div className="mobile-header">
       <nav className={`mobile-header-nav ${isOpen ? "opened-nav" : ""}`}>
-        <Hamburger
-          onToggle={burgerToggle}
-          hideOutline={false}
-          toggled={isOpen}
-          toggle={setOpen}
-        />
+        <Hamburger hideOutline={false} toggled={isOpen} toggle={setOpen} />
         <ul className={`mobile-header-list ${isOpen ? "opened-ul" : ""}`}>
           <li>
             <Link
+              onClick={() => setOpen(false)}
               to="/"
               activeClassName="active"
-              onClick={el => handleNav(el.target)}
             >
-              Home
+              <Trans>Home</Trans>
             </Link>
           </li>
 
           <li>
             <Link
-              to="/menu"
+              onClick={() => setOpen(false)}
+              to="#specials"
               activeClassName="active"
-              onClick={el => handleNav(el.target)}
             >
-              Menu
+              <Trans>Menu</Trans>
             </Link>
           </li>
 
           <li>
             <Link
-              to="/contact"
+              onClick={() => setOpen(false)}
+              to="#contact"
               activeClassName="active"
-              onClick={el => handleNav(el.target)}
             >
-              Contact
+              <Trans>Contact</Trans>
             </Link>
+          </li>
+
+          <li>
+            <div className="language">
+              {language === "en" ? (
+                <Link onClick={() => setOpen(false)} to="/ar">
+                  عربي
+                </Link>
+              ) : (
+                <Link onClick={() => setOpen(false)} to="/">
+                  English
+                </Link>
+              )}
+            </div>
           </li>
         </ul>
       </nav>

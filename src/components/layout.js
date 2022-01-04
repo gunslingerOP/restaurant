@@ -10,12 +10,15 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import iconSet from "../selection.json"
 import { StaticImage } from "gatsby-plugin-image"
-
+import { Trans } from "gatsby-plugin-react-i18next"
+import { I18nextContext } from "gatsby-plugin-react-i18next"
 import Header from "./header/header.js"
 import "./layout.scss"
 import IcomoonReact from "icomoon-react"
 
 const Layout = ({ children }) => {
+  const context = React.useContext(I18nextContext)
+  const language = context.language
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -29,18 +32,24 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div className="main-container">
+      <div className={`main-container ${language === "ar" ? "rtl" : "ltr"}`}>
         <main>{children}</main>
         <footer id="footer">
           <div className="footer-top">
             <div className="container limit-width">
               <div className="row">
                 <div className="footer-info">
-                  <h3>SAJ ALREEF</h3>
+                  <h3>
+                    <Trans>SAJ ALREEF</Trans>
+                  </h3>
                   <p>
-                    A108 Adam Street NY 535022, USA
-                    <strong>Phone: +9647705344322</strong>
-                    <strong>Email: hasanaqeel38@gmail.com</strong>
+                    <Trans>Baghdad,Al-mansour, 14 Ramadan street</Trans>
+                    <strong>
+                      <Trans>Phone</Trans>: +9647705344322
+                    </strong>
+                    <strong>
+                      <Trans>Email</Trans>: hasanaqeel38@gmail.com
+                    </strong>
                   </p>
                   <div className="social-links mt-3">
                     <a href="#" className="twitter">
