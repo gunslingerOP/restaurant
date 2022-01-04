@@ -188,13 +188,13 @@ const Menu = () => {
                       alt="buttermilk pancakes"
                       className="photo"
                     />
-                  </div>
-                  <div className="item-info">
-                    <main>
-                      <h4 className="name">{item.name}</h4>
-                      <h4 className="price">{item.price}</h4>
-                    </main>
-                    <p className="item-text">{item.description}</p>
+                    <div className="item-info">
+                      <main>
+                        <h4 className="name">{item.name}</h4>
+                        <h4 className="price">{item.price}</h4>
+                      </main>
+                      <p className="item-text">{item.description}</p>
+                    </div>
                   </div>
                 </div>
               </div>

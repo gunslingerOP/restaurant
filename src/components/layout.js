@@ -47,8 +47,11 @@ const Layout = ({ children }) => {
                     <strong>
                       <Trans>Phone</Trans>: +9647705344322
                     </strong>
-                    <strong>
-                      <Trans>Email</Trans>: hasanaqeel38@gmail.com
+                    <strong className="email">
+                      <Trans>Email</Trans>
+                      <span className="actual-email">
+                        <span className="colon">:</span>hasanaqeel38@gmail.com
+                      </span>
                     </strong>
                   </p>
                   <div className="social-links mt-3">
@@ -88,7 +91,7 @@ const Layout = ({ children }) => {
                 </div>
 
                 <div className="footer-logo">
-                  <StaticImage src="../images/saj.png" />
+                  <StaticImage alt="footer image" src="../images/saj.png" />
                 </div>
               </div>
             </div>

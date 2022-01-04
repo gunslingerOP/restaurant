@@ -176,7 +176,7 @@ header {
   .nav-link {
     color: white;
     border-bottom: solid 1px transparent;
-    transition: all 0.51s;
+    transition: color 0.51s;
     text-decoration: none;
     cursor: pointer;
     &:hover {
@@ -187,6 +187,12 @@ header {
     @media (max-width: 600px) {
       display: none;
     }
+  }
+}
+
+#reserve-btn {
+  @media (max-width: 600px) {
+    display: none;
   }
 }
 

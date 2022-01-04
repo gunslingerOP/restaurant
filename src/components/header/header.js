@@ -7,8 +7,11 @@ import IcomoonReact from "icomoon-react"
 import { useState, useEffect } from "react"
 import MobileHeader from "./mobile-header"
 import { Trans } from "gatsby-plugin-react-i18next"
+import { I18nextContext } from "gatsby-plugin-react-i18next"
 
 const Header = ({ siteTitle }) => {
+  const context = React.useContext(I18nextContext)
+  const language = context.language
   const [isScrolled, setScrolled] = useState(false)
   useEffect(() => {
     // eslint-disable-next-line no-undef
@@ -47,13 +50,11 @@ const Header = ({ siteTitle }) => {
         </div>
 
         <div className="language">
-          <IcomoonReact
-            iconSet={iconSet}
-            icon="bx-world"
-            size={20}
-            color="#cda35e"
-          />
-          <Link to="/">English</Link>/<Link to="/ar">عربي</Link>
+          {language === "en" ? (
+            <Link to="/ar">عربي</Link>
+          ) : (
+            <Link to="/">English</Link>
+          )}
         </div>
       </div>
       <header className={`${isScrolled ? "header-scrolled" : ""}`}>
@@ -85,7 +86,7 @@ const Header = ({ siteTitle }) => {
               </Link>
             </ul>
           </nav>
-          <Link className="nav-link" to="#reserve">
+          <Link id="reserve-btn" to="#reserve">
             <button className="reserve">
               <Trans>Book a Table</Trans>
             </button>
