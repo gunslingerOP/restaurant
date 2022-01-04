@@ -290,6 +290,10 @@
   }
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 .why-us {
   background-color: #0c0b09;
   @media (max-width: 950px) {

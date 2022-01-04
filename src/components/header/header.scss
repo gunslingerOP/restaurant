@@ -80,6 +80,8 @@ header {
   .nav-items {
     list-style: none;
     display: flex;
+    border-bottom: solid 1px transparent;
+
     padding: 0;
     grid-gap: 20px;
   }
@@ -175,7 +177,7 @@ header {
 
   .nav-link {
     color: white;
-    border-bottom: solid 1px transparent;
+    border-bottom: solid 2px transparent;
     transition: color 0.51s;
     text-decoration: none;
     cursor: pointer;

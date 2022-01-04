@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import "./menu.scss"
 import Fade from "react-reveal/Fade"
+import { Trans } from "gatsby-plugin-react-i18next"
 
 const Menu = () => {
   const [activeType, setActiveType] = useState("main dishes")
@@ -171,7 +172,7 @@ const Menu = () => {
             className={`tab ${activeType === item ? "active-menu" : ""}`}
             key={index}
           >
-            {item}
+            <Trans>{item}</Trans>
           </div>
         ))}
       </article>

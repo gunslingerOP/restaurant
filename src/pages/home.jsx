@@ -52,7 +52,9 @@ const Home = () => (
               data-aos-delay="200"
             >
               <a
-                href="https://www.youtube.com/watch?v=GlrxcuEDyF8"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.youtube.com/watch?v=X_1ITbIN6gw"
                 className="glightbox play-btn"
               ></a>
             </div>
@@ -151,6 +153,23 @@ const Home = () => (
         </Fade>
       </section>
 
+      <section id="specials">
+        <div className="container limit-width">
+          <div className="section-title">
+            <h2>
+              <Trans>Specials</Trans>
+            </h2>
+            <p>
+              <Trans>Check Our Specials</Trans>
+            </p>
+          </div>
+
+          <div className="container">
+            <Menu></Menu>
+          </div>
+        </div>
+      </section>
+
       <section id="reserve">
         <Fade left>
           <div className="limit-width">
@@ -180,23 +199,6 @@ const Home = () => (
             </div>
           </div>
         </Fade>
-      </section>
-
-      <section id="specials">
-        <div className="container limit-width">
-          <div className="section-title">
-            <h2>
-              <Trans>Specials</Trans>
-            </h2>
-            <p>
-              <Trans>Check Our Specials</Trans>
-            </p>
-          </div>
-
-          <div className="container">
-            <Menu></Menu>
-          </div>
-        </div>
       </section>
 
       <section id="contact" className="contact">
@@ -257,12 +259,14 @@ const Home = () => (
                       size={40}
                       color="#cda35e"
                     />{" "}
-                    <div className="contact-item">
-                      <h4>
-                        <Trans>Email</Trans>:
-                      </h4>
-                      <p>hasanaqeel38@gmail.com</p>
-                    </div>
+                    <a href='mailto:<nowiki>agentavery@sample.com?subject="subject text"'>
+                      <div className="contact-item">
+                        <h4>
+                          <Trans>Email</Trans>:
+                        </h4>
+                        <p>hasanaqeel38@gmail.com</p>
+                      </div>
+                    </a>
                   </div>
 
                   <div className="contact-parent">
@@ -272,12 +276,14 @@ const Home = () => (
                       size={40}
                       color="#cda35e"
                     />{" "}
-                    <div className="contact-item">
-                      <h4>
-                        <Trans>Call</Trans>:
-                      </h4>
-                      <p>+9647705344322</p>
-                    </div>
+                    <a href="tel:07705344322">
+                      <div className="contact-item">
+                        <h4>
+                          <Trans>Call</Trans>:
+                        </h4>
+                        <p>+9647705344322</p>
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>

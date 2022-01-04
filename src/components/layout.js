@@ -44,15 +44,19 @@ const Layout = ({ children }) => {
                   </h3>
                   <p>
                     <Trans>Baghdad,Al-mansour, 14 Ramadan street</Trans>
-                    <strong>
-                      <Trans>Phone</Trans>: +9647705344322
-                    </strong>
-                    <strong className="email">
-                      <Trans>Email</Trans>
-                      <span className="actual-email">
-                        <span className="colon">:</span>hasanaqeel38@gmail.com
-                      </span>
-                    </strong>
+                    <a href="tel:07705344322">
+                      <strong>
+                        <Trans>Phone</Trans>: +9647705344322
+                      </strong>
+                    </a>
+                    <a href='mailto:<nowiki>agentavery@sample.com?subject="subject text"'>
+                      <strong className="email">
+                        <Trans>Email</Trans>
+                        <span className="actual-email">
+                          <span className="colon">:</span>hasanaqeel38@gmail.com
+                        </span>
+                      </strong>
+                    </a>
                   </p>
                   <div className="social-links mt-3">
                     <a href="#" className="twitter">
