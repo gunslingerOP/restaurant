@@ -1,6 +1,6 @@
 import React from "react"
 import "./menu.scss"
-import Zoom from "react-reveal/Zoom"
+import Fade from "react-reveal/Fade"
 import { Trans } from "gatsby-plugin-react-i18next"
 import { useState, useEffect } from "react"
 
@@ -207,7 +207,7 @@ const Menu = () => {
       <article className="menu-items">
         {menuItems.map((item, index) =>
           item.type === activeType ? (
-            <Zoom key={index} duration={500}>
+            <Fade key={index} bottom duration={1000}>
               <div key={index} className="menu-item">
                 <div className="item-container">
                   <div className="img-container">
@@ -235,7 +235,7 @@ const Menu = () => {
                   </div>
                 </div>
               </div>
-            </Zoom>
+            </Fade>
           ) : null
         )}
       </article>
