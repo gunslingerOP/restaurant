@@ -178,6 +178,13 @@ const Menu = () => {
 
   const toggleTab = index => {
     setActiveType(index)
+    let yOffset = window.scrollY
+    let deviceWidth = window.innerWidth
+    if (yOffset > 2314 && deviceWidth < 900) {
+      window.scrollTo(0, 2330)
+    } else if (yOffset > 1750 && deviceWidth > 900) {
+      window.scrollTo(0, 1860)
+    }
   }
 
   return (
