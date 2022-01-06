@@ -1,14 +1,37 @@
 #hero {
-  width: 100%;
-  height: 100vh;
-  background: url(../images/hero-bg.jpg) top center;
-  background-size: cover;
+  min-height: 100vh;
   position: relative;
-  padding: 0;
-  background-attachment: fixed;
-
+  overflow: hidden;
   display: flex;
-  align-items: center;
+  &::before {
+    background: url(../images/hero-bg.jpg) top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    will-change: transform;
+    z-index: -1;
+  }
+
+  &::after {
+    background: rgba(0, 0, 0, 0.5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    will-change: transform;
+    z-index: -1;
+  }
 
   .btns {
     margin-top: 30px;
@@ -72,15 +95,6 @@
   }
   a {
     text-decoration: none;
-  }
-  &:before {
-    content: "";
-    background: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
   }
 
   .hero-content {
@@ -189,10 +203,9 @@
 
 .about {
   background: url(../images/about-bg.jpg) center center;
-  background-size: cover;
   position: relative;
   padding: 80px 0;
-  background-attachment: fixed;
+  background-size: cover;
 
   .container {
     padding: 20px;
@@ -422,31 +435,31 @@ a {
         }
       }
     }
-
-    .btn-reserve {
-      font-weight: 600;
-      font-size: 13px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      display: inline-block;
-      padding: 12px 30px;
-      border-radius: 50px;
-      transition: 0.3s;
-      line-height: 1;
-      color: white;
-      border: 2px solid #cda45e;
-      text-decoration: none;
-      margin-top: 20px;
-      margin: auto;
-      -webkit-tap-highlight-color: transparent;
-
-      &:hover {
-        background: #cda45e;
-        color: #fff;
-      }
-    }
   }
 }
+.btn-reserve {
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+  line-height: 1;
+  color: white;
+  border: 2px solid #cda45e;
+  text-decoration: none;
+  margin-top: 20px;
+  margin: auto;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    background: #cda45e;
+    color: #fff;
+  }
+}
+
 #specials {
   padding: 60px 0;
   background-color: #0c0b09;

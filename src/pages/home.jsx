@@ -88,7 +88,7 @@ const Home = () => (
       </section>
 
       <section id="why-us" className="why-us">
-        <Fade right>
+        <Fade bottom>
           <div className="container limit-width" data-aos="fade-up">
             <div className="section-title">
               <h2>
@@ -171,7 +171,7 @@ const Home = () => (
       </section>
 
       <section id="reserve">
-        <Fade left>
+        <Fade bottom>
           <div className="limit-width">
             <div className="section-title">
               <h2>
@@ -214,7 +214,7 @@ const Home = () => (
         </div>
 
         <div className="container limit-width" data-aos="fade-up">
-          <Fade right>
+          <Fade bottom>
             <div className="row mt-5">
               <div>
                 <div className="info">

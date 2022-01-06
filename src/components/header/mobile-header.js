@@ -20,7 +20,7 @@ const MobileHeader = () => {
           <li>
             <Link
               onClick={() => setOpen(false)}
-              to="/"
+              to="#hero"
               activeClassName="active"
             >
               <Trans>Home</Trans>

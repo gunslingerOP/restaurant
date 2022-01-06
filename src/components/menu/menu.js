@@ -1,12 +1,29 @@
-import React, { useState } from "react"
+import React from "react"
 import "./menu.scss"
-import Fade from "react-reveal/Fade"
+import Zoom from "react-reveal/Zoom"
 import { Trans } from "gatsby-plugin-react-i18next"
+import { useState, useEffect } from "react"
 
 const Menu = () => {
   const [activeType, setActiveType] = useState("main dishes")
-  const menuTypes = ["main dishes", "desserts", "appetizers"]
+  const [activeTabs, setActiveTabs] = useState(false)
 
+  const menuTypes = ["main dishes", "desserts", "appetizers"]
+  useEffect(() => {
+    // eslint-disable-next-line no-undef
+    window.addEventListener("scroll", function () {
+      // eslint-disable-next-line no-undef
+      let yOffset = this.window.scrollY
+      let deviceWidth = this.window.innerWidth
+      if (yOffset > 2314 && deviceWidth < 900) {
+        setActiveTabs(true)
+      } else if (yOffset > 1750 && deviceWidth > 900) {
+        setActiveTabs(true)
+      } else {
+        setActiveTabs(false)
+      }
+    })
+  })
   const menuItems = [
     {
       name: "Saj",
@@ -165,7 +182,10 @@ const Menu = () => {
 
   return (
     <section className="menu">
-      <article className="tabs">
+      <article
+        id="menu-tab"
+        className={`${activeTabs ? "sticky-menu" : ""} tabs`}
+      >
         {menuTypes.map((item, index) => (
           <div
             onClick={() => toggleTab(item)}
@@ -180,7 +200,7 @@ const Menu = () => {
       <article className="menu-items">
         {menuItems.map((item, index) =>
           item.type === activeType ? (
-            <Fade key={index} top duration={1000}>
+            <Zoom key={index} duration={500}>
               <div key={index} className="menu-item">
                 <div className="item-container">
                   <div className="img-container">
@@ -195,11 +215,20 @@ const Menu = () => {
                         <h4 className="price">{item.price}</h4>
                       </main>
                       <p className="item-text">{item.description}</p>
+                      <button className="btn-reserve order">
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href="//api.whatsapp.com/send?phone=9647705344322&text=I want to order"
+                        >
+                          <Trans>order</Trans>
+                        </a>
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
-            </Fade>
+            </Zoom>
           ) : null
         )}
       </article>
