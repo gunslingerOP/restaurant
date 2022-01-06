@@ -5,11 +5,14 @@ import Layout from "../components/layout"
 import Zoom from "react-reveal/Zoom"
 import Fade from "react-reveal/Fade"
 import about from "../images/about.jpg"
+import hero from "../images/hero-bg.jpg"
+
 import IcomoonReact from "icomoon-react"
 import iconSet from "../selection.json"
 import Menu from "../components/menu/menu"
 import { Trans } from "gatsby-plugin-react-i18next"
 import { graphql } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 const Home = () => (
   <>
     <Layout>
@@ -60,6 +63,7 @@ const Home = () => (
             </div>
           </div>
         </div>
+        <img className="hero-bg" src={hero} />
       </section>
       <section id="about" className="about">
         <div className="container ">

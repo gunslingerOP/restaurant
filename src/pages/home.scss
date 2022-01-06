@@ -3,21 +3,21 @@
   position: relative;
   overflow: hidden;
   display: flex;
-  &::before {
-    background: url(../images/hero-bg.jpg) top center;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    content: "";
-    height: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    will-change: transform;
-    z-index: -1;
-  }
+  // &::before {
+  //   background: url(../images/hero-bg.jpg) top center;
+  //   background-repeat: no-repeat;
+  //   background-position: bottom;
+  //   content: "";
+  //   height: 100%;
+  //   max-width: 100%;
+  //   overflow: hidden;
+  //   left: 0;
+  //   position: fixed;
+  //   top: 0;
+  //   width: 100%;
+  //   will-change: transform;
+  //   z-index: -1;
+  // }
 
   &::after {
     background: rgba(0, 0, 0, 0.5);
@@ -30,6 +30,14 @@
     top: 0;
     width: 100%;
     will-change: transform;
+    z-index: -1;
+  }
+
+  .hero-bg {
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    object-fit: cover;
     z-index: -1;
   }
 
